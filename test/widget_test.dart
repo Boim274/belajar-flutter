@@ -141,4 +141,14 @@ void main() {
   var n = hitungNilai2(mapel1: 50, mapel2: 2);
   print(n);
   hitungNilai3(50, 100);
+
+  // final keyword => inutable/ tidak bisa di rubah
+  // const final
+  // const
+  // const String mahasiswa = "Ibrahim";
+  // final
+
+  final String mahasiswafk;
+  mahasiswafk = "Ibrahim";
+  print(mahasiswafk);
 }
