@@ -151,4 +151,16 @@ void main() {
   final String mahasiswafk;
   mahasiswafk = "Ibrahim";
   print(mahasiswafk);
+
+  // null safety
+  // ? ! late
+  // ? digunakan dia boleh null
+  // String? jurusan;
+  // untuk di isi nanti
+  late String? jurusanns;
+  jurusanns = "Teknik Informatika";
+  // jurusan = "Teknik Informatika";
+  // jurusan = "TI";
+  // memaksa untuk di jalankan / yakin untuk ada datanya
+  print(jurusanns.length);
 }
