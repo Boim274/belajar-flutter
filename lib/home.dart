@@ -1,3 +1,4 @@
+import 'package:belajar2/HomeDana.dart';
 import 'package:belajar2/latihan-page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
@@ -19,6 +20,12 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       _counter++;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      _counter += 3;
     });
   }
 
@@ -49,11 +56,10 @@ class _MyHomePageState extends State<MyHomePage> {
               /// The color to paint the indicator.
               indicatorColor: Colors.blue,
 
-              /// The color to paint behind th indicator.
+              /// The color to paint behind the indicator.
               indicatorBackgroundColor: Colors.grey,
 
               /// The widgets to display in the [ImageSlideshow].
-              /// Add the sample image file into the images folder
               children: [
                 Image.network(
                   'https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_640.jpg',
@@ -88,38 +94,57 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Row(
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Jumlah + 3'),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const LatihanPage()));
-                  },
-                  child: const Text('Latihan Page'),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Latihan2()));
-                  },
-                  child: const Text('Latihan Page 2'),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Latihan3()));
-                  },
-                  child: const Text('Latihan Page 3'),
-                ),
-              ],
-            )
+            const SizedBox(height: 20),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: _decrementCounter,
+                    child: const Text('Jumlah + 3'),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const LatihanPage()));
+                    },
+                    child: const Text('Latihan Page 1'),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const Latihan2()));
+                    },
+                    child: const Text('Latihan Page 2'),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const Latihan3()));
+                    },
+                    child: const Text('Latihan Page 3'),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const homeDana()));
+                    },
+                    child: const Text('Home Dana'),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

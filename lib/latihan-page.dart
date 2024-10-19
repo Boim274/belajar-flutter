@@ -60,29 +60,33 @@ class _LatihanPageState extends State<LatihanPage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _incrementCounter,
-                  child: const Text('Tambah 5'),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: _decrementCounter,
-                  child: const Text('Kurang 3'),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: _divideCounter,
-                  child: const Text('Bagi 3'),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: _multiplyCounter,
-                  child: const Text('Kali 7'),
-                ),
-              ],
+            const SizedBox(height: 20),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: _incrementCounter,
+                    child: const Text('Tambah 5'),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: _decrementCounter,
+                    child: const Text('Kurang 3'),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: _divideCounter,
+                    child: const Text('Bagi 3'),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: _multiplyCounter,
+                    child: const Text('Kali 7'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
