@@ -32,6 +32,7 @@ class _Latihan2PageState extends State<Latihan2> {
                               ),
                       ),
                       padding: const EdgeInsets.all(10),
+                      // ignore: prefer_const_constructors
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,

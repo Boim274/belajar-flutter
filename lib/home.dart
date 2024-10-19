@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 import 'latihan2.dart';
+import 'latihan3.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -109,6 +110,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         builder: (context) => const Latihan2()));
                   },
                   child: const Text('Latihan Page 2'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const Latihan3()));
+                  },
+                  child: const Text('Latihan Page 3'),
                 ),
               ],
             )
