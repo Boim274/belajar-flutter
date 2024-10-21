@@ -1,5 +1,7 @@
 import 'package:belajar2/HomeDana.dart';
+import 'package:belajar2/homeShope.dart';
 import 'package:belajar2/latihan-page.dart';
+import 'package:belajar2/pulsaData.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
@@ -141,7 +143,23 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) => const HomeDana()));
                     },
                     child: const Text('Home Dana'),
-                  )
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const Pulsa()));
+                    },
+                    child: const Text('Pulsa Data'),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const Homeshope()));
+                    },
+                    child: const Text('Home ShopeePay'),
+                  ),
                 ],
               ),
             ),

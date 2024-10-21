@@ -1,14 +1,13 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
-
+import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomeDana extends StatefulWidget {
-  const HomeDana({super.key});
+class Homeshope extends StatefulWidget {
+  const Homeshope({super.key});
 
   @override
-  State<HomeDana> createState() => _HomeDanaState();
+  State<Homeshope> createState() => _Homeshope();
 }
 
 final List<String> imgList = [
@@ -19,26 +18,25 @@ final List<String> imgList = [
   'https://a.m.dana.id/danaweb/promo/1716962616-QR-Cashback---thumbnail.png',
 ];
 
-class _HomeDanaState extends State<HomeDana> {
-  int _selectedIndex = 0; // Variabel untuk menyimpan indeks yang dipilih
-
+class _Homeshope extends State<Homeshope> {
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: const Color(0xFF008CEB),
+        backgroundColor: const Color.fromARGB(255, 255, 84, 27),
         leading: Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Image.asset(
-            'images/dana.png',
+          child: Image.network(
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1qLbdIUzsUkRFvURGJ51-_TG3nGb8NMD-qg&s',
           ),
         ),
         title: const Row(
           children: [
             Text(
-              "Rp",
+              "",
               style: TextStyle(
                 color: Color.fromARGB(192, 255, 255, 255),
                 fontSize: 14,
@@ -46,25 +44,20 @@ class _HomeDanaState extends State<HomeDana> {
             ),
             SizedBox(width: 5),
             Text(
-              "10.000",
+              "Selamat Pagi",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 22,
               ),
             ),
             SizedBox(width: 4),
-            Icon(
-              FontAwesomeIcons.solidEyeSlash,
-              color: Colors.white,
-              size: 12,
-            ),
           ],
         ),
         actions: [
           IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.email_outlined,
+              FontAwesomeIcons.bell,
               color: Colors.white,
               size: 30,
             ),
@@ -80,7 +73,7 @@ class _HomeDanaState extends State<HomeDana> {
               height: 290.0,
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
-                color: Color(0xFF008CEB),
+                color: Color.fromARGB(255, 255, 92, 27),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30.0),
                   bottomRight: Radius.circular(30.0),
@@ -105,23 +98,7 @@ class _HomeDanaState extends State<HomeDana> {
                                 child: Column(
                                   children: [
                                     Icon(
-                                      FontAwesomeIcons.qrcode,
-                                      size: 30.0,
-                                      color: Colors.white,
-                                    ),
-                                    SizedBox(height: 6.0),
-                                    Text(
-                                      "Pindai",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  children: [
-                                    Icon(
-                                      FontAwesomeIcons.plus,
+                                      FontAwesomeIcons.wallet,
                                       size: 30.0,
                                       color: Colors.white,
                                     ),
@@ -137,13 +114,13 @@ class _HomeDanaState extends State<HomeDana> {
                                 child: Column(
                                   children: [
                                     Icon(
-                                      FontAwesomeIcons.paperPlane,
+                                      FontAwesomeIcons.qrcode,
                                       size: 30.0,
                                       color: Colors.white,
                                     ),
                                     SizedBox(height: 6.0),
                                     Text(
-                                      "Kirim",
+                                      "Kode Bayar",
                                       style: TextStyle(color: Colors.white),
                                     ),
                                   ],
@@ -153,13 +130,29 @@ class _HomeDanaState extends State<HomeDana> {
                                 child: Column(
                                   children: [
                                     Icon(
-                                      FontAwesomeIcons.rightFromBracket,
+                                      FontAwesomeIcons.arrowRightLong,
                                       size: 30.0,
                                       color: Colors.white,
                                     ),
                                     SizedBox(height: 6.0),
                                     Text(
-                                      "Minta",
+                                      "Transfer",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Icon(
+                                      FontAwesomeIcons.bank,
+                                      size: 30.0,
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(height: 6.0),
+                                    Text(
+                                      "Transfer Bank",
                                       style: TextStyle(color: Colors.white),
                                     ),
                                   ],
@@ -366,12 +359,14 @@ class _HomeDanaState extends State<HomeDana> {
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Image.network(
-                                      "images/dana-biru.png",
-                                      height: 20.0,
+                                    Icon(FontAwesomeIcons.cartPlus,
+                                        color: Color.fromARGB(255, 255, 84, 27),
+                                        size: 20.0),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 4),
                                     ),
                                     Text(
-                                      "DANA",
+                                      "Upgrade",
                                       style: TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold),
@@ -380,7 +375,7 @@ class _HomeDanaState extends State<HomeDana> {
                                       padding: const EdgeInsets.only(left: 2),
                                     ),
                                     Text(
-                                      "Berbagi Kabar Terbaru",
+                                      "ShoopePay plush sekarang",
                                       style: TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.normal),
@@ -395,92 +390,6 @@ class _HomeDanaState extends State<HomeDana> {
                               ),
                               Text(
                                 "19/10",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.grey),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 10.0),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Image.network(
-                                      "images/dana-biru.png",
-                                      height: 20.0,
-                                    ),
-                                    Text(
-                                      "DANA",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 2),
-                                    ),
-                                    Text(
-                                      "Berbagi Kabar Terbaru",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.normal),
-                                    ),
-                                    Image.network(
-                                      "https://cdn-icons-png.flaticon.com/128/3947/3947650.png",
-                                      height: 20.0,
-                                      width: 20.0,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Text(
-                                "18/10",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.grey),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 10.0),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Image.network(
-                                      "images/dana-biru.png",
-                                      height: 20.0,
-                                    ),
-                                    Text(
-                                      "DANA",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 2),
-                                    ),
-                                    Text(
-                                      "Berbagi Kabar Terbaru",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.normal),
-                                    ),
-                                    Image.network(
-                                      "https://cdn-icons-png.flaticon.com/128/3947/3947650.png",
-                                      height: 20.0,
-                                      width: 20.0,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Text(
-                                "17/10",
                                 style: TextStyle(
                                     fontSize: 13,
                                     fontWeight: FontWeight.normal,
@@ -569,7 +478,7 @@ class _HomeDanaState extends State<HomeDana> {
                                   children: [
                                     Icon(
                                       FontAwesomeIcons.checkCircle,
-                                      color: Color(0xFF008CEB),
+                                      color: Color.fromARGB(255, 255, 84, 27),
                                       size: 20.0,
                                     ),
                                     Padding(
@@ -591,10 +500,10 @@ class _HomeDanaState extends State<HomeDana> {
                                 child: OutlinedButton(
                                   style: OutlinedButton.styleFrom(
                                     foregroundColor:
-                                        const Color.fromARGB(255, 0, 140, 255),
+                                        const Color.fromARGB(255, 255, 84, 27),
                                     side: BorderSide(
                                       color: const Color.fromARGB(
-                                          255, 0, 140, 255),
+                                          255, 255, 84, 27),
                                     ),
                                   ),
                                   onPressed: () {},
@@ -603,7 +512,7 @@ class _HomeDanaState extends State<HomeDana> {
                                     style: TextStyle(
                                         fontSize: 10.0,
                                         color: const Color.fromARGB(
-                                            255, 0, 140, 255),
+                                            255, 255, 84, 27),
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -654,10 +563,10 @@ class _HomeDanaState extends State<HomeDana> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              buildNavBarItem(FontAwesomeIcons.moneyBillWave, "Beranda", 0),
-              buildNavBarItem(FontAwesomeIcons.list, "Aktivitas", 1),
+              buildNavBarItem(FontAwesomeIcons.home, "Beranda", 0),
+              buildNavBarItem(FontAwesomeIcons.dollar, "Keuangan", 1),
               const SizedBox(width: 40), // Space for the floating action button
-              buildNavBarItem(FontAwesomeIcons.wallet, "Dompet", 3),
+              buildNavBarItem(FontAwesomeIcons.history, "Riwayat", 3),
               buildNavBarItem(FontAwesomeIcons.user, "Saya", 4),
             ],
           ),
@@ -667,7 +576,7 @@ class _HomeDanaState extends State<HomeDana> {
         offset: const Offset(10, 30), // Geser ke kanan 2 piksel
         child: ClipOval(
           child: Material(
-            color: const Color(0xFF008CEB),
+            color: const Color.fromARGB(255, 255, 84, 27),
             elevation: 12,
             child: InkWell(
               onTap: () {
@@ -686,7 +595,7 @@ class _HomeDanaState extends State<HomeDana> {
                     ),
                     SizedBox(height: 4),
                     Text(
-                      "PAY",
+                      "Qris",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 12,
